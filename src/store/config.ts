@@ -3,9 +3,16 @@ import { Config } from '../store/types'
 export const config: Config = {
     limits: 'any',
     defaultValues: {
-        googleAccesKey: 'AIzaSyB9a89xKzGS3AhnlAJhUaoHf_L1X_rzNn0',
+        googleAccesKey: 'AIzaSyCySVNZDcyzaM-m-iTYEbVraTbP9rNbuuU',
         sid: 'd95011958ce1199f6',
-        searchRequest: 'Trump'
+        searchRequest: 'politics in russia',
+        newsAmount: 3
     },
-    uiText: 1
+    uiText: {
+        titles: {
+            news: 'Breaking news',
+            tweets: 'what they think',
+            btn: 'surf more',
+        }
+    }
 }
