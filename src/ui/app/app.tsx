@@ -1,6 +1,6 @@
 import React from 'react';
 import { config } from '../../store/config';
-import { getNews } from '../../dev/get-news'
+import { getNewsData } from '../../dev/get-news-data'
 import { News } from '../news/news'
 import './app.css';
 import { Config, NewsDataset } from '../../store/types';
@@ -13,29 +13,35 @@ export class App extends React.PureComponent<{}, State> {
   public state: State = {
     newsData: {}
   }
+  public componentDidMount(): void {
+    this.getNewsDataElements()
+  }
 
   public render(): React.ReactElement {
     return (
       <div className="root">
-        news
+
         <News
           defaultValues={config.defaultValues}
           newsData={this.state.newsData}
+          uiText={config.uiText}
         />
-        <button className="btn" onClick={this.getNewsAndTweets}>
-          check what's new
+
+        <button className="btn" onClick={this.getNewsDataAndTweets}>
+          {config.uiText.titles.btn}
         </button>
+
       </div>
     )
   }
 
-  private getNewsAndTweets = (): any => {
-    this.getNewsElements()
+  private getNewsDataAndTweets = (): any => {
+    this.getNewsDataElements()
   }
 
-  private getNewsElements = (): any => {
+  private getNewsDataElements = (): any => {
     const { googleAccesKey, sid, searchRequest } = config.defaultValues
-    const news = getNews(googleAccesKey, sid, searchRequest)
+    const news = getNewsData(googleAccesKey, sid, searchRequest)
     news.then((data: any) => {
       this.setState({
         newsData: { ...this.state.newsData, news: data.items }

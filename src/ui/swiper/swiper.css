@@ -1,0 +1,16 @@
+.root {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+}
+.swiper-container {
+  width: 600px;
+  height: 400px;
+}
+.swiper-wrapper {
+  display: flex;
+  flex-direction: row;
+}

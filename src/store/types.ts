@@ -1,12 +1,13 @@
 export type Config = {
     limits: any
     defaultValues: DefaultValues
-    uiText: {
-        titles: {
-            news: string
-            tweets: string
-            btn: string
-        }
+    uiText: Uitext
+}
+export type Uitext = {
+    titles: {
+        news: string
+        tweets: string
+        btn: string
     }
 }
 
@@ -15,6 +16,7 @@ export type DefaultValues = {
     sid: string
     searchRequest: string
     newsAmount: number
+    facebookId: number
 }
 
 export type NewsDataset = {

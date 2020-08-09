@@ -25,3 +25,21 @@
 .btn:hover {
   background: #000000;
 }
+
+.card {
+    
+  background-color: whitesmoke;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+}
+
+.title {
+  font-weight: 600;
+  font-size: 25px;
+  line-height: 30px;
+}
+
+.snippet {
+  font-size: 15px;
+  line-height: 20px;
+}
